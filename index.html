@@ -18,17 +18,17 @@
             color: #ffffff;
             font-family: 'Poppins', sans-serif;
             text-align: center;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
         }
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             padding: 20px;
             z-index: 1;
         }
         .glow {
-            font-size: 3em;
+            font-size: 2.5em;
             color: #ffd700;
             text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
             animation: pulse 2s infinite alternate;
@@ -38,7 +38,7 @@
             100% { transform: scale(1.1); }
         }
         .message {
-            font-size: 1.5em;
+            font-size: 1.2em;
             margin: 20px 0;
             font-weight: bold;
         }
@@ -50,6 +50,10 @@
             gap: 15px;
             padding: 20px 0;
             -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .gallery-container::-webkit-scrollbar {
+            display: none;
         }
         .gallery {
             display: flex;
@@ -57,7 +61,8 @@
             gap: 15px;
         }
         .gallery img {
-            width: 200px;
+            width: 80vw;
+            max-width: 250px;
             height: auto;
             border-radius: 15px;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -75,6 +80,10 @@
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+        @media (max-width: 600px) {
+            .glow { font-size: 2em; }
+            .message { font-size: 1em; }
+        }
     </style>
 </head>
 <body>
@@ -87,7 +96,7 @@
                 <img src="./IMG-20250207-WA0007.jpg" alt="Photo 1">
                 <img src="./IMG-20250207-WA0005.jpg" alt="Photo 2">
                 <img src="./IMG-20240708-WA0001.jpg" alt="Photo 3">
-                </div>
+            </div>
         </div>
 
         <div class="appreciation">
@@ -97,4 +106,5 @@
     </div>
 </body>
 </html>
+
 
