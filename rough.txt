@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            z-index: 1;
+        }
+        .glow {
+            font-size: 3em;
+            color: #ffd700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .message {
+            font-size: 1.5em;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .appreciation {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .money {
+            position: absolute;
+            width: 50px;
+            height: auto;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glow">Happy Birthday, NIGGESH / BRICH / RICHY / BRIJESH!</h1>
+        <p class="message">Wishing you a fantastic day filled with joy, laughter, and all the happiness you bring into my life!</p>
+        
+        <div class="gallery">
+            <img src="./IMG-20250207-WA0007.jpg" alt="Photo 1">
+            <img src="./IMG-20250207-WA0005.jpg" alt="Photo 2">
+            <img src="./IMG-20240708-WA0001.jpg" alt="Photo 3">
+        </div>
+
+        <div class="appreciation">
+            <h2>You Mean the World to Me</h2>
+            <p>You have been a true friend through thick and thin. Your presence in my life makes everything brighter and more meaningful. Thank you for all the amazing memories and for always being there for me. I appreciate you more than words can say!</p>
+        </div>
+    </div>
+
+    <script>
+        function createMoney() {
+            const money = document.createElement('img');
+            money.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/US_%24100_reverse.jpg/320px-US_%24100_reverse.jpg';
+            money.classList.add('money');
+            money.style.left = Math.random() * 100 + 'vw';
+            money.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(money);
+            setTimeout(() => money.remove(), 5000);
+        }
+        setInterval(createMoney, 300);
+    </script>
+</body>
+</html>
